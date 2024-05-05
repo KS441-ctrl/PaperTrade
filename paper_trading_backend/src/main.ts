@@ -8,11 +8,11 @@ async function bootstrap() {
   app.enableCors()
 
   // Serve static files from the Angular dist directory
-  app.use(express.static(join(__dirname, '../angular/dist/angular')));
+  app.use(express.static(join(__dirname, '../Paper_Trading_frontend/dist/stock-simulator/browser')));
 
   // Configure fallback route to serve index.html
   app.use('*', (req, res) => {
-    res.sendFile(join(__dirname, '../angular/dist/angular/index.html'));
+    res.sendFile(join(__dirname, '../Paper_Trading_frontend/dist/stock-simulator/browser/index.html'));
   });
 
   await app.listen(3000);
